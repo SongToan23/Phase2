@@ -1,0 +1,275 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #D3B1C2;
+    color: #F0F1E8;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    background-color: #F0F1E8;
+    min-width: 200px;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #D3B1C2;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: separate;
+    border: 1px solid #ddd;
+}
+
+.product-table th, .product-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+}
+
+.product-preview {
+    max-width: 100px; /* Điều chỉnh kích thước tối đa của hình ảnh */
+    
+}
+
+.product-name {
+    max-width: 200px; /* Điều chỉnh kích thước tối đa của cột Name */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-table th:last-child, .product-table td:last-child {
+    border-right: none; /* Loại bỏ đường kẻ bên phải của ô cuối cùng */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(211, 177, 194, 0.7); /* #D3B1C2 với độ mờ 70% */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #F0F1E8; /* #F0F1E8 cho màu nội dung */
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CSS cho các trường nhập */
+.modal-content input[type="text"],
+.modal-content input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #D3B1C2; /* Màu hồng nhạt */
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* CSS cho nút lưu */
+.modal-content #saveChanges {
+    background-color: #F0F1E8; /* Màu trắng xám nhạt */
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content #saveChanges:hover {
+    background-color: #D3B1C2; /* Màu hồng nhạt khi di chuột qua */
+}
+
+/* CSS cho nút thêm */
+.modal-content #saveNewProduct {
+    background-color: #F0F1E8; /* Màu trắng xám nhạt */
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content #saveNewProduct:hover {
+    background-color: #D3B1C2; /* Màu hồng nhạt khi di chuột qua */
+}
+
+
+
+category-options {
+    margin-top: 10px;
+}
+
+.category-options button {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 8px; /* Điều chỉnh kích thước padding để làm cho nút nhỏ hơn */
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D3B1C2; /* Màu hồng nhạt */
+    color: #F0F1E8; /* Màu trắng xám nhạt */
+    font-size: 14px; /* Điều chỉnh kích thước font để làm cho nút nhỏ hơn */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-options button:hover {
+    background-color: #C49CB6; /* Màu hồng nhạt khi di chuột qua */
+}
+
+#manage-categories {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #D3B1C2; /* Màu hồng nhạt */
+    color: #F0F1E8; /* Màu trắng xám nhạt */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+#manage-categories:hover {
+    background-color: #C49CB6; /* Màu hồng nhạt khi di chuột qua */
+}
+
+#order-section {
+    margin-top: 20px;
+}
+
+#order-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+#order-table th, #order-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+}
+
+#order-table th:first-child, #order-table td:first-child {
+    border-left: 1px solid #ddd;
+}
+
+#order-table th:last-child, #order-table td:last-child {
+    border-right: none;
+}
+
+#order-table th {
+    background-color: #D3B1C2; /* Màu tựa đề */
+    color: #F0F1E8; /* Màu chữ tựa đề */
+}
+
+#order-table th:first-child, #order-table td:first-child {
+    border-left: none;
+}
+
+#order-table th:last-child, #order-table td:last-child {
+    border-right: none;
+}
+
+.product-table th {
+    background-color: #D3B1C2; /* Màu tựa đề */
+    color: #F0F1E8; /* Màu chữ tựa đề */
+}
+
+.product-table th:first-child {
+    border-left: 1px solid #ddd;
+}
+
+.product-table th:last-child {
+    border-right: none;
+}
+
+#manage-orders {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #D3B1C2; /* Màu nền */
+    color: #F0F1E8; /* Màu chữ */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+#manage-orders:hover {
+    background-color: #C49CB6; /* Màu khi di chuột qua */
+}
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+
+  <script src="transport.js"></script>
+</head>
+
+<body>
+  <header class="header">
+
+    <div class="header-main">
+      <div class="container">
+        <div class="inner-wrap">
+          <div class="inner-logo">
+            <a href="product.html">
+              <img src="uploads/Logo.png" ; width="80px" alt="">
+            </a>
+            <!-- <span>FASHION KIDS</span> -->
+
+          </div>
+          <div class="inner-menu">
+            <ul>
+              <li>
+                <a class="home" href="product.html">Home</a>
+              </li>
+              <li>
+                <a href="#">Shop</a>
+              </li>
+              <li>
+                <a href="#">Product</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <!-- <div class="arrow-steps clearfix">
+    <div class="step done"> <span> <a href="index.php?quanly=giohang">Giỏ hàng</a></span> </div>
+    <div class="step current"> <span><a href="index.php?quanly=vanchuyen">Vận chuyển</a></span> </div>
+    <div class="step"> <span>Thanh toán<span> </div>
+  </div> -->
+    <div class="formvanchuyen">
+      <div class="vanchuyen">
+        <form action="" autocomplete="off" method="POST">
+          <div class="inputForm">
+            <label for="email">Họ và Tên</label>
+            <input type="text" name="name" placeholder="Tên của bạn">
+          </div>
+          <div class="inputForm">
+            <label for="email">Phone</label>
+            <input type="text" name="phone" placeholder="số điện thoại">
+          </div>
+          <div class="inputForm">
+            <label for="email">Địa chỉ</label>
+            <input type="text" name="address" placeholder="Phường Hoà Khánh/ Quận Liên Chiểu...">
+          </div>
+          <div class="inputForm">
+            <label for="email">Ghi chú</label>
+            <input type="text" name="note" placeholder="...">
+          </div>
+          <button onclick="Submit()" class="custom-button">Thêm thông tin vận chuyển</button>
+        </form>
+      </div>
+    </div>
+    <table style="width:100%; text-align: center;border-collapse: collapse;" border="1">
+      <tr>
+        <th>Id</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Thương hiệu</th>
+        <th>Số lượng</th>
+        <th>Giá</th>
+        <th>Thành tiền</th>
+
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

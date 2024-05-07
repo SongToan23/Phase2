@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h3{
+        font-size: 30px;
+    }
+    form{
+        border: 1px solid black;
+       padding: 50px;
+    }
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10%;
+    }
+    .form_group{
+        padding: 5px;
+    }
+    button{
+        text-align: center;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 10px;
+        border: none;
+        background-color: cyan;
+        width: 300px;
+    }
+    input{
+        height: 40px;
+        width: 300px;
+    }
+  
+</style>
+<body>
+    <header>
+        <a href="./product.html">Home</a>
+        </header>
+    <div class="wrapper">
+        <form action="#">
+            <h3>Dang nhap</h3>
+            <div id="error-message" style="color: red;"></div>
+            <div class="form_group">
+                <input type="text" placeholder="username" id="username">
+            </div>
+            <div class="form_group">
+                <input type="text" placeholder="password" id="password">
+            </div>
+             <button id="signin" >signin</button>
+             <a id="hello" style="display: block;"></a>
+        <a href="./signup.html">dang ki</a>
+ 
+    </form>
+</div>
+</body>
+<script src="./signform.js"></script>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    // Đăng ký sự kiện khi tài liệu được tải xong
+    document.addEventListener('DOMContentLoaded', function () {
+      // Lấy tham chiếu đến nút "Mua hàng"
+      var buyButton = document.getElementById('buyButton');
+
+      // Đăng ký sự kiện click cho nút "Mua hàng"
+      buyButton.addEventListener('click', function () {
+        // Điều hướng tới trang "transport.html"
+        window.location.href = 'transport.html';
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* CSS styles for cart page */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td img {
+      width: 200px;
+      object-fit: cover;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-main">
+      <div class="container">
+        <div class="inner-wrap">
+          <div class="inner-logo">
+            <a href="product.html">
+              <img src="uploads/Logo.png" width="80px" alt="">
+            </a>
+          </div>
+          <div class="inner-menu">
+            <ul>
+              <li>
+                <a class="home" href="product.html">Home</a>
+              </li>
+              <li>
+                <a href="#">Shop</a>
+              </li>
+              <li>
+                <a href="#">Product</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="inner-search">
+            <form action="/search" method="GET">
+              <input style="width: 200px; height: 30px;" id="searchInput" type="text" name="query" placeholder="Tìm kiếm sản phẩm..." style="font-size: 20px;">
+              <button style="border-radius: 10px;" type="submit" id="button">Tìm kiếm </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <h1 style="margin-top: 100px;">GIỎ HÀNG</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sản phẩm</th>
+        <th>Tên</th>
+        <th>Thương hiệu</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- Dynamically populated with JavaScript -->
+    </tbody>
+  </table>
+
+  <button id="buyButton">Mua hàng</button>
+
+  <script>
+
+    function addOrderToUserCart(userId, newOrder) {
+      // Here you can implement the logic to add the new order to the user's cart
+      // For example, you can update the cart stored in localStorage or make a request to your backend server to update the user's cart in the database
+      console.log("Adding order to user's cart:", userId, newOrder);
+    }
+    // Get the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Function to remove a product from the cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCartItems();
+    }
+
+    // Function to update the quantity of a product in the cart
+    function updateQuantity(index, quantity) {
+      cart[index].quantity = quantity;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCartItems();
+    }
+
+    // Function to render the cart items
+    function renderCartItems() {
+      const cartItemsBody = document.getElementById("cart-items");
+      cartItemsBody.innerHTML = "";
+
+      cart.forEach((product, index) => {
+        const row = document.createElement("tr");
+
+        const productImgCell = document.createElement("td");
+        const productImg = document.createElement("img");
+        productImg.src = product.preview;
+        productImg.alt = product.name;
+        productImgCell.appendChild(productImg);
+        row.appendChild(productImgCell);
+
+        const productNameCell = document.createElement("td");
+        productNameCell.textContent = product.name;
+        row.appendChild(productNameCell);
+
+        const productBrandCell = document.createElement("td");
+        productBrandCell.textContent = product.brand;
+        row.appendChild(productBrandCell);
+
+        const productPriceCell = document.createElement("td");
+        productPriceCell.textContent = product.price;
+        row.appendChild(productPriceCell);
+
+        const quantityCell = document.createElement("td");
+        const quantityWrapper = document.createElement("div");
+        quantityWrapper.classList.add("quantity-wrapper");
+
+        const decreaseButton = document.createElement("button");
+        decreaseButton.textContent = "-";
+        decreaseButton.addEventListener("click", () => {
+          const newQuantity = Math.max(product.quantity - 1, 1);
+          updateQuantity(index, newQuantity);
+        });
+        quantityWrapper.appendChild(decreaseButton);
+
+        const quantityInput = document.createElement("input");
+        quantityInput.type = "text";
+        quantityInput.value = product.quantity;
+        quantityInput.style.width = "100px";
+        quantityInput.style.height = "20px";
+        quantityInput.addEventListener("input", (event) => {
+          const newQuantity = parseInt(event.target.value);
+          if (!isNaN(newQuantity) && newQuantity >= 1) {
+            updateQuantity(index, newQuantity);
+          }
+        });
+        quantityWrapper.appendChild(quantityInput);
+
+        const increaseButton = document.createElement("button");
+        increaseButton.textContent = "+";
+        increaseButton.addEventListener("click", () => {
+          const newQuantity = product.quantity + 1;
+          updateQuantity(index, newQuantity);
+        });
+        quantityWrapper.appendChild(increaseButton);
+
+        quantityCell.appendChild(quantityWrapper);
+        row.appendChild(quantityCell);
+
+        const removeButtonCell = document.createElement("td");
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Xóa";
+        removeButton.addEventListener("click", () => {
+          removeFromCart(index);
+        });
+        removeButtonCell.appendChild(removeButton);
+        row.appendChild(removeButtonCell);
+
+        cartItemsBody.appendChild(row);
+      });
+    }
+
+    // Initial rendering of cart items
+    renderCartItems();
+  </script>
+</body>
+
+</html>

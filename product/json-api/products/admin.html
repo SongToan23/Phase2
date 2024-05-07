@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a id="manage-orders" href="#">Quản lý đơn hàng</a></li>
+                    <li><a id="manage-categories" href="#">Quản lý danh mục sản phẩm</a>
+                        <input type="hidden" id="productCategory" value="">
+                        <div id="category-options-container" style="display: none;">
+                            <a href="#" id="boy-option">Boy</a>
+                            <a href="#" id="girl-option">Girl</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="product-table">
+            <!-- Bảng sản phẩm sẽ được hiển thị tại đây -->
+        </main>
+
+        <main id="order-section">
+            <table id="order-table">
+                <!-- Các hàng và cột của bảng đơn hàng sẽ được thêm vào đây -->
+            </table>
+        </main>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Chỉnh sửa sản phẩm</h2>
+            <form id="editForm">
+                <input type="text" id="productName" name="productName" placeholder="Tên sản phẩm"><br>
+                <input type="text" id="productPreview" name="productPreview" placeholder="Đường link hình ảnh"><br>
+                <input type="text" id="productDescription" name="productDescription" placeholder="Mô tả sản phẩm">
+                <input type="text" id="productBrand" name="productBrand" placeholder="Hãng"><br>
+                <input type="text" id="productPrice" name="productPrice" placeholder="Giá"><br>
+                <!-- Thêm các trường khác như hình ảnh, hãng, giá, v.v. -->
+                <button type="button" id="saveChanges">Lưu thay đổi</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Thêm sản phẩm mới</h2>
+            <form id="addProductForm">
+                <input type="text" id="newProductName" name="newProductName" placeholder="Tên sản phẩm"><br>
+                <input type="text" id="newProductPreview" name="newProductPreview" placeholder="Đường link hình ảnh"><br>
+                <input type="text" id="newProductDescription" name="newProductDescription" placeholder="Mô tả sản phẩm">
+                <input type="text" id="newProductBrand" name="newProductBrand" placeholder="Hãng"><br>
+                <input type="text" id="newProductPrice" name="newProductPrice" placeholder="Giá"><br>
+                <!-- Thêm các trường khác như hình ảnh, hãng, giá, v.v. -->
+                <button type="button" id="saveNewProduct">Thêm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

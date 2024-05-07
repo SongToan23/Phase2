@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    
+  />
+  <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    
+
+</head>
+<body>
+    <!-- header -->
+<header class="header">
+    
+    <div class="header-main">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="inner-logo">
+                    <a href="product.html">
+                        <img src="uploads/Logo.png"; width="80px" alt="">
+                    </a>
+                    <!-- <span>FASHION KIDS</span> -->
+
+                </div>
+                <div class="inner-menu">
+                    <ul>
+                        <li >
+                            <a  class="home" href="product.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#">Product</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="inner-search"> <!-- Thay đổi class thành "inner-search" -->
+                    <form action="/search" method="GET">
+                        <input style="width: 200px; height: 30px;" id="searchInput" type="text" name="query" placeholder="Tìm kiếm sản phẩm..." style="font-size: 20px;">
+                        <button style="border-radius: 10px;" type="submit" id="button">Tìm kiếm </button>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</header>
+ <!-- header -->
+
+ <!-- slides -->
+ <section id="Slider">
+    <div class="aspect-ratio-169"> <!------Nhờ đặc tính này nên khi rê chuột vào nó Responsive theo -->
+        <img src="uploads/slide1.jpg">
+        <img src="uploads/slide2.jpg">
+        <img src="uploads/slide3.jpg">
+    </div>
+    <div class="dot-container">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        
+    </div>
+
+</section>
+<!-- end slides -->
+ 
+ <div class="container">
+    <div class="product-main">
+        <h1 style="color: #000;">Girls</h1>
+        <div class="session-one">
+    
+        </div>
+        <h1 style="color: #000;">Boys</h1>
+        <div class="session-two">
+            
+        </div>
+     </div>
+ </div>
+ 
+
+  <!-- footer -->
+<footer class="footer">
+    
+
+    <div class="session-three">  
+        
+            <div id="containerFooter">
+                
+                <div id="webFooter">
+                    <h3> FASHION KIDS </h3>
+                    <p> GIRLS </p>
+                    <p> BOYS </p>
+                    
+                </div>
+                <div id="webFooter">
+                    <h3> Liên kết </h3>
+                    <p> Trang chủ </p>
+                    <p> Về chúng tôi </p>
+                    <p> Liên hệ </p>
+                </div>
+                <div id="webFooter">
+                    <h3> Hợp Tác </h3>
+                    <p> Thanh Tùng </p>
+                    <p> Phan Anh </p>
+                    <p> Bích Liễu </p>
+                    <p> Thanh Long </p>
+                    
+                </div>
+                <div id="webFooter">
+                    <h3> Địa chỉ </h3>
+                    <p> 495 Tôn Đức Thắng, Hòa Khánh Bắc, Đà Nẵng</p>
+                </div>
+            </div>
+    </div> 
+        
+    
+</footer> 
+<script type="module" src="./product.js"></script>
+<script src="search.js"></script>
+<script src="js/slide.js"></script>
+</body>
+</html>
+
+
